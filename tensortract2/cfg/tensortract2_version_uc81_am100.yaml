@@ -1,0 +1,112 @@
+weights:
+  file_name: tensortract2_version_uc81_am100.pth
+  expected_sha256_checksum: 20f14e3f75200158cab9705c03f5d3a306f144e249820d3bbedf1680ceddde62
+  url: https://drive.google.com/file/d/11u-Jnd4loeqir8vUC2iPe-sK_gQfJlly/view?usp=sharing
+
+
+encoder:
+  in_channels: 1024
+  hidden_channels: 192
+  out_channels: 20
+  use_rnn: true
+
+
+generator:
+  in_channels: 20
+  out_channels: 1
+  pre_conv_kernel_size: 7
+  post_conv_kernel_size: 7
+  upsample_initial_channel: 512
+  upsample_rates: [10,8,2,2]
+  upsample_kernel_sizes: [20,16,4,4]
+  resblock_kernel_sizes: [3,7,11]
+  resblock_dilation_sizes:
+    - [1,3,5]
+    - [1,3,5]
+    - [1,3,5]
+  resblock_type: 1
+  dim_cond: 192
+  mode_cond: concat
+  padding_mode: zeros
+  causal: false
+
+
+titanet_wav2mel:
+  normalize: "per_feature"
+  window_size: 0.025
+  sample_rate: 16000
+  window_stride: 0.01
+  window: "hann"
+  features: 80
+  n_fft: 512
+  frame_splicing: 1
+  dither: 0.00001
+
+
+titanet_encoder:
+  feat_in: 80
+  activation: relu
+  conv_mask: true
+  jasper:
+    - filters: 1024
+      repeat: 1
+      kernel: [3]
+      stride: [1]
+      dilation: [1]
+      dropout: 0.0
+      residual: false
+      separable: true
+      se: true
+      se_context_size: -1
+
+    - filters: 1024
+      repeat:  3
+      kernel: [7]
+      stride: [1]
+      dilation: [1]
+      dropout: 0.1
+      residual: true
+      separable: true
+      se: true
+      se_context_size: -1
+
+    - filters: 1024
+      repeat: 3
+      kernel: [11]
+      stride: [1]
+      dilation: [1]
+      dropout: 0.1
+      residual: true
+      separable: true
+      se: true
+      se_context_size: -1
+
+    - filters: 1024
+      repeat: 3
+      kernel: [15]
+      stride: [1]
+      dilation: [1]
+      dropout: 0.1
+      residual: true
+      separable: true
+      se: true
+      se_context_size: -1
+
+    - filters: 3072
+      repeat: 1
+      kernel: [1]
+      stride: [1]
+      dilation: [1]
+      dropout: 0.0
+      residual: false
+      separable: true
+      se: true
+      se_context_size: -1
+
+
+titanet_decoder:
+  feat_in: 3072
+  num_classes: 16681
+  pool_mode: 'attention'
+  emb_sizes: 192
+  angular: true # sets bias to false for centers
