@@ -3,7 +3,7 @@ from setuptools import setup
 install_requires = [
     'einops>=0.8.1',
     'numpy',
-    'pytorch-tcn==1.2.2.dev1',
+    'pytorch-tcn==1.2.3',
     'requests>=2.32.3',
     'target-approximation>=0.0.5',
     'torch>=2.6.0',
@@ -15,7 +15,7 @@ install_requires = [
 
 setup(
     name='tensortract2',
-    version='0.0.0',
+    version='0.0.1',
     description='A PyTorch implementation of TensorTract2',
     author='Paul Krug',
     url='https://github.com/Altavo/tensortract2',
