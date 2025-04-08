@@ -1,4 +1,5 @@
 from setuptools import setup
+from setuptools import find_packages
 
 install_requires = [
     'einops>=0.8.1',
@@ -22,7 +23,7 @@ setup(
     license='Commons Clause License Condition v1.0',
     long_description_content_type='text/markdown',
     long_description=open('README.md').read(),
-    packages=['tensortract2'],
+    packages=find_packages(include=["tensortract2", "tensortract2.*"]),
     package_data={'tensortract2': ['cfg/tensortract2_version_uc81_am100.yaml']},
     install_requires=install_requires,
 )
