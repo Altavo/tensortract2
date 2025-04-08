@@ -58,6 +58,7 @@ class TensorTract2( torch.nn.Module ):
             self,
             cfg_path: str = 'tensortract2_version_uc81_am100',
             auto_load_weights: bool = True,
+            hf_token: Optional[str] = None,
             ):
         super(TensorTract2,self).__init__()
 
@@ -77,7 +78,7 @@ class TensorTract2( torch.nn.Module ):
             cfg = yaml.load( f, Loader = yaml.FullLoader )
         self.cfg = cfg
 
-        self.wavlm = WavLM()
+        self.wavlm = WavLM( token = hf_token )
         self.encoder = ConformerEncoder( **cfg[ 'encoder' ] )
         self.generator = HifiGenerator( **cfg[ 'generator' ] )
         self.titanet = TitaNet(

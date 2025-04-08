@@ -88,10 +88,12 @@ class SSL(torch.nn.Module):
 class WavLM( SSL ):
     def __init__(
             self,
+            **kwargs,
             ):
         super(WavLM,self).__init__(
             ssl_model = WavLMModel.from_pretrained(
                 pretrained_model_name_or_path = "microsoft/wavlm-large",
+                **kwargs,
                 )
             )
         return
