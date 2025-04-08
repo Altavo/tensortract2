@@ -16,7 +16,7 @@ install_requires = [
 
 setup(
     name='tensortract2',
-    version='0.0.1',
+    version='0.0.2',
     description='A PyTorch implementation of TensorTract2',
     author='Paul Krug',
     url='https://github.com/Altavo/tensortract2',
