@@ -9,7 +9,7 @@ TensorTract2 is a multi-task model that features:
 - Speech denoising, pitch-detection and more
 
 ## NOTE
-This is a stand-alone implementation of the TensorTract2 model, so there is no articulatory synthesizer included. If you wish to do **articulatory synthesis** from the latent representation or if you wish to create **2D vocaltract visualizations and videos**, please use [TensorTractLab](https://github.com/altavo/tensortractlab), which integrates both TensorTract2 and VocalTractLab-Python.
+This is a stand-alone implementation of the TensorTract2 model, so there is no articulatory synthesizer included. If you wish to do **articulatory synthesis** from the latent representation or if you wish to create **2D vocaltract visualizations and videos**, please use [TensorTractLab](https://github.com/tensortract-dev/tensortractlab), which integrates both TensorTract2 and VocalTractLab-Python.
 
 ## Installation
 TensorTract2 can be installed via pip:
