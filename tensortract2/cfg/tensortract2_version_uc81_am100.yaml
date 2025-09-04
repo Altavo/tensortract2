@@ -1,7 +1,7 @@
 weights:
   file_name: tensortract2_version_uc81_am100.pth
   expected_sha256_checksum: 20f14e3f75200158cab9705c03f5d3a306f144e249820d3bbedf1680ceddde62
-  url: https://drive.google.com/file/d/11u-Jnd4loeqir8vUC2iPe-sK_gQfJlly/view?usp=sharing
+  url: https://drive.google.com/file/d/1UIPlLKXCuVHPj3_nmJflw48TzXI4BtUw/view?usp=sharing
 
 
 encoder:
