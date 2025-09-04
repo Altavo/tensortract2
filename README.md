@@ -26,7 +26,7 @@ from tensortract2 import TensorTract2
 # Load the model
 tt2 = TensorTract2()
 ```
-Per default the model will download the weights from [google drive](https://drive.google.com/file/d/11u-Jnd4loeqir8vUC2iPe-sK_gQfJlly/view?usp=sharing) on its first initialization and put it into the users cache directory (wavlm-large will be downloaded from Huggingface). If the model is used again, no download will be necessary anymore. If you wish to load the weights manually, you could do it like this:
+Per default the model will download the weights from [google drive](https://drive.google.com/file/d/1UIPlLKXCuVHPj3_nmJflw48TzXI4BtUw/view?usp=sharing) on its first initialization and put it into the users cache directory (wavlm-large will be downloaded from Huggingface). If the model is used again, no download will be necessary anymore. If you wish to load the weights manually, you could do it like this:
 ```python
 tt2 = TensorTract2(auto_load_weights = False)
 tt2.load_weights( 'path/to/weights' )
